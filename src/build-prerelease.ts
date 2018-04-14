@@ -1,38 +1,65 @@
 import * as getRepoInfo from 'git-repo-info';
-import sync from 'cross-spawn';
+import * as sync from 'cross-spawn';
+import chalk from 'chalk';
 
 /**
  * Provides the starting point of the harvest module
  */
 export default class BranchPrerelease {
   info;
-  branchType;
-  storyName;
 
   constructor() {
     this.info = getRepoInfo();
   }
 
-  getFeatureName() {
-    const branchArray = this.info.branch.split('/');
-
-    return {
-      type: branchArray[0],
-      story: branchArray[1]
-    };
+  execute() {
+    return this.getBranchName()
+      .then(this.bump)
+      .then(this.publish)
+      .then(() => {
+        console.log(chalk.green('Prerelease published to npm successfully!'));
+      })
+      .catch(error => {
+        throw error;
+      });
   }
 
-  bump(type, story) {
-    return sync('bump', ['--prerelease', '--preid', `${story}`], {
-      stdio: 'inherit'
+  private getBranchName() {
+    const branchArray = this.info.branch.split('/');
+
+    return Promise.resolve({
+      type: branchArray[0],
+      name: branchArray[1]
     });
   }
 
-  publish() {
-    const { type, story } = this.getFeatureName();
-    const results = this.bump(type, story);
-    console.log(type, story, results);
-    console.log('\n\n\n');
-    console.log('It Works!');
+  private bump({ type, name }) {
+    return new Promise((resolve, reject) => {
+      if (type !== 'feature') {
+        reject('Must be on a feature branch!');
+      }
+
+      const command = 'bump';
+      const args = ['--prerelease', '--preid', `${name}`];
+      const options = {
+        stdio: 'inherit'
+      };
+
+      sync(command, args, options);
+      resolve();
+    });
+  }
+
+  private publish() {
+    return new Promise((resolve, reject) => {
+      const command = 'npm';
+      const args = ['publish'];
+      const options = {
+        stdio: 'inherit'
+      };
+
+      sync(command, args, options);
+      resolve();
+    });
   }
 }
