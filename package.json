@@ -52,7 +52,11 @@
       "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "git-repo-info": "^2.0.0",
+    "version-bump-prompt": "^4.0.1"
+  },
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "@types/node": "^9.6.5",
