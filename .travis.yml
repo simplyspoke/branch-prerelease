@@ -1,0 +1,22 @@
+language: node_js
+branches:
+  only:
+    - master
+cache:
+  yarn: true
+  directories:
+    - node_modules
+notifications:
+  slack:
+    rooms:
+      - $SLACK_ACCOUNT:$SLACK_TOKEN#branch-prerelease
+    on_success: change # default: always
+    on_failure: always # default: always
+node_js:
+  - '8.10.0'
+script:
+  - npm run test:prod
+  - npm run build
+after_success:
+  - npm run report-coverage
+  - npm run semantic-release
