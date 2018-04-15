@@ -36,7 +36,7 @@ export class BranchPrerelease {
   private bump({ type, name }) {
     return new Promise((resolve, reject) => {
       if (type !== 'feature') {
-        reject('Must be on a feature branch!');
+        return reject('Must be on a feature branch!');
       }
 
       const command = 'bump';

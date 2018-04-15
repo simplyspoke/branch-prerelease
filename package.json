@@ -1,6 +1,6 @@
 {
   "name": "branch-prerelease",
-  "version": "1.0.1",
+  "version": "1.0.2-undefined.3",
   "description": "Quick npm prereleases to ease the multi-repo feature dependency woes.",
   "repository": {
     "type": "git",
