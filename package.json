@@ -1,0 +1,84 @@
+{
+  "name": "branch-prerelease",
+  "version": "0.0.1",
+  "description": "Quick npm prereleases to ease the multi-repo feature dependency woes.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplyspoke/branch-prerelease.git"
+  },
+  "keywords": [
+    "npm",
+    "gitflow",
+    "git",
+    "ci",
+    "branch-prerelease"
+  ],
+  "main": "dist/index.js",
+  "bin": "bin/run.js",
+  "files": [
+    "dist"
+  ],
+  "author": "Tristan Fitzgerald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simplyspoke/branch-prerelease/issues"
+  },
+  "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "webpack --mode production",
+    "start": "ts-node src",
+    "test": "jest",
+    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+    }
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "git-repo-info": "^2.0.0",
+    "version-bump-prompt": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.5",
+    "coveralls": "^3.0.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.0",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^15.1.7",
+    "ts-jest": "^22.4.2",
+    "ts-loader": "^4.2.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.8.1",
+    "validate-commit-msg": "^2.14.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  }
+}

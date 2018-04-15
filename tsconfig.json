@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": "src",
+    "lib": [
+        "es2016",
+        "dom"
+    ],
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "commonjs"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+      "dist"
+  ]
+}
