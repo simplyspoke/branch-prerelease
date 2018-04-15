@@ -15,8 +15,22 @@
 
 # Usage
 
-Its simple, run:
+## CLI
 
-`npm run branch-prerelease`
+Its simple, run the following:
 
-Then Branch Prerelease will detect the feature branch you are on, create a prerelease version, and publish it to npm. Quick and simple like your workflow should be.
+`branch-prerelease`
+
+Branch Prerelease will detect the feature branch you are on, create a prerelease version, and publish it to npm. Quick and simple like your workflow should be.
+
+## script
+
+You can also include Branch Prerelease in a custom script:
+
+```js
+import BranchPrerelease from 'branch-prerelease';
+
+const branchPrerelease = new BranchPrerelease();
+
+branchPrerelease.run();
+```

@@ -7,11 +7,7 @@ cache:
   directories:
     - node_modules
 notifications:
-  slack:
-    rooms:
-      - $SLACK_ACCOUNT:$SLACK_TOKEN#branch-prerelease
-    on_success: change # default: always
-    on_failure: always # default: always
+  slack: $SLACK_ACCOUNT:$SLACK_TOKEN
 node_js:
   - '8.10.0'
 script:

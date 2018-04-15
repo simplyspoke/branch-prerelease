@@ -12,7 +12,7 @@ export default class BranchPrerelease {
     this.info = getRepoInfo();
   }
 
-  execute() {
+  run() {
     return this.getBranchName()
       .then(this.bump)
       .then(this.publish)

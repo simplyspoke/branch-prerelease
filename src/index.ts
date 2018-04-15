@@ -1,3 +1,1 @@
-import BranchPrerelease from './build-prerelease';
-
-new BranchPrerelease().publish();
+export * from './build-prerelease';

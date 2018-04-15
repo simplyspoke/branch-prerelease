@@ -13,7 +13,7 @@ describe('Build Prerelease', () => {
     expect(instance).toBeInstanceOf(BranchPrerelease);
   });
 
-  describe('execute method', () => {
+  describe('run method', () => {
     beforeEach(() => {
       instance.getBranchName = jest.fn(() => Promise.resolve());
       instance.bump = jest.fn(() => Promise.resolve());
@@ -21,7 +21,7 @@ describe('Build Prerelease', () => {
     });
 
     it('should return the branch type and name.', async () => {
-      await instance.execute().then(() => {
+      await instance.run().then(() => {
         expect(instance.getBranchName).toHaveBeenCalled();
         expect(instance.bump).toHaveBeenCalled();
         expect(instance.publish).toHaveBeenCalled();
@@ -30,7 +30,7 @@ describe('Build Prerelease', () => {
 
     it('should return an undefined name on the devlop branch.', async () => {
       instance.bump = jest.fn(() => Promise.reject('Failed'));
-      await instance.execute().catch(error => {
+      await instance.run().catch(error => {
         expect(error).toEqual('Failed');
       });
     });

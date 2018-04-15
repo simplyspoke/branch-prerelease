@@ -23,14 +23,12 @@
     "url": "https://github.com/simplyspoke/branch-prerelease/issues"
   },
   "scripts": {
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint -t codeFrame 'src/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "webpack --mode production && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "webpack --mode development --display-error-details --watch",
+    "build": "webpack --mode production",
+    "start": "ts-node src",
     "test": "jest",
-    "test:watch": "jest --watchAll",
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",

@@ -4,26 +4,16 @@
     "baseUrl": "src",
     "lib": [
         "es2016",
-        "dom",
-        "esnext.asynciterable"
+        "dom"
     ],
     "moduleResolution": "node",
     "target": "es6",
-    "module": "commonjs",
-    "declaration": true,
-    "sourceMap": true,
-    "declarationDir": "types",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "module": "commonjs"
   },
   "include": [
-    "src",
-    "test"
+    "src"
   ],
   "exclude": [
-      "src/**/*.models.ts",
-      "node_modules",
       "dist"
   ]
 }
