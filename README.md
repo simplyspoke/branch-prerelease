@@ -1,7 +1,7 @@
 # Branch Prerelease
 
 [![Build Status](https://travis-ci.org/simplyspoke/branch-prerelease.svg?branch=master)](https://travis-ci.org/simplyspoke/branch-prerelease)
-[![Coverage Status](https://coveralls.io/repos/github/simplyspoke/branch-prerelease/badge.svg)](https://coveralls.io/github/simplyspoke/branch-prerelease)
+[![Coverage Status](https://coveralls.io/repos/github/simplyspoke/branch-prerelease/badge.svg?branch=master)](https://coveralls.io/github/simplyspoke/branch-prerelease?branch=master)
 [![npm version](https://badge.fury.io/js/harvest.svg)](http://badge.fury.io/js/harvest)
 [![Greenkeeper badge](https://badges.greenkeeper.io/simplyspoke/branch-prerelease.svg)](https://greenkeeper.io/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
