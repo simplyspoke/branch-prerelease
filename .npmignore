@@ -1,0 +1,15 @@
+# Development Files
+jest.config.js
+tsconfig.json
+tslint.json
+webpack.config.js
+.travis.yml
+.prettierrc
+.editorconfig
+
+# information files
+code-of-conduct.md
+CONTRIBUTING.md
+
+# source code
+src*
