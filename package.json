@@ -14,9 +14,12 @@
     "branch-prerelease"
   ],
   "main": "dist/index.js",
-  "bin": "bin/run.js",
+  "bin": {
+    "branch-prerelease": "bin/run.js"
+  },
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "author": "Tristan Fitzgerald",
   "license": "MIT",
