@@ -5,7 +5,7 @@ import chalk from 'chalk';
 /**
  * Provides the starting point of the harvest module
  */
-export default class BranchPrerelease {
+export class BranchPrerelease {
   info;
 
   constructor() {
@@ -20,7 +20,7 @@ export default class BranchPrerelease {
         console.log(chalk.green('Prerelease published to npm successfully!'));
       })
       .catch(error => {
-        throw error;
+        console.log(chalk.red(error));
       });
   }
 
