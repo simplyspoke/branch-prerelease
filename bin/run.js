@@ -3,6 +3,4 @@
 
 const { BranchPrerelease } = require('../dist');
 
-const branchPrerelease = new BranchPrerelease();
-
-branchPrerelease.run();
+new BranchPrerelease().run();

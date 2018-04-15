@@ -1,5 +1,5 @@
 jest.mock('cross-spawn');
-import BranchPrerelease from './build-prerelease';
+import { BranchPrerelease } from './build-prerelease';
 import * as sync from 'cross-spawn';
 
 describe('Build Prerelease', () => {
