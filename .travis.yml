@@ -4,13 +4,12 @@ branches:
     - master
     - /^greenkeeper/.*$/
 cache:
-  yarn: true
   directories:
     - node_modules
 notifications:
   slack: $SLACK_ACCOUNT:$SLACK_TOKEN
 node_js:
-  - '8.10.0'
+  - '8.10'
 script:
   - npm run test:prod
   - npm run build
