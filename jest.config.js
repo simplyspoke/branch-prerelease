@@ -14,6 +14,7 @@ module.exports = {
       statements: 95
     }
   },
+  testEnvironment: "node",
   maxWorkers: 1,
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testMatch: [
