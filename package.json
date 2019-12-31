@@ -54,7 +54,7 @@
     }
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "git-repo-info": "^2.0.0",
     "version-bump-prompt": "^5.0.7"
   },
